@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">BMI Checker</string>
+    <string name="weight">Weight</string>
+    <string name="enter_weight">Enter Weight</string>
+    <string name="height">Height</string>
+    <string name="feet">Feet</string>
+    <string name="inch">Inch</string>
+    <string name="start">Start</string>
+    <string name="restart">Restart</string>
+</resources>
