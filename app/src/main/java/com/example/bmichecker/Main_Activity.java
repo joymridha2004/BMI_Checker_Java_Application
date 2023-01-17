@@ -8,17 +8,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 
 public class Main_Activity extends AppCompatActivity {
 
 
-    TextInputEditText enterWeightInputEditT,enterHeightFeetInputEditT,enterHeightInchInputEditT;
+    TextInputEditText enterWeightInputEditT, enterHeightFeetInputEditT, enterHeightInchInputEditT;
 
-    Button startButton,restartButton;
+    Button startButton, restartButton;
 
     TextView ResultTV;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,36 +41,47 @@ public class Main_Activity extends AppCompatActivity {
             @SuppressLint("ResourceAsColor")
             @Override
             public void onClick(View view) {
+                if (!enterWeightInputEditT.getText().toString().isEmpty() && !enterHeightFeetInputEditT.getText().toString().isEmpty() && !enterHeightInchInputEditT.getText().toString().isEmpty()) {
 
-                int Weight = Integer.parseInt(enterWeightInputEditT.getText().toString());
-                int heightFeet = Integer.parseInt(enterHeightFeetInputEditT.getText().toString());
-                int heightInch = Integer.parseInt(enterHeightInchInputEditT.getText().toString());
+                    int Weight = Integer.parseInt(enterWeightInputEditT.getText().toString());
+                    int heightFeet = Integer.parseInt(enterHeightFeetInputEditT.getText().toString());
+                    int heightInch = Integer.parseInt(enterHeightInchInputEditT.getText().toString());
 
 
-                int TotalInch = heightFeet*12+heightInch;
-                double TotalCm = TotalInch*2.53;
-                double TotalMeeter = TotalCm /100;
+                    int TotalInch = heightFeet * 12 + heightInch;
+                    double TotalCm = TotalInch * 2.53;
+                    double TotalMeeter = TotalCm / 100;
 
-                double BMI = Weight/(TotalMeeter*TotalMeeter);
-                if (BMI>25){
-                    ResultTV.setText("you're Over Weight");
-                }else if (BMI <18 ){
-                    ResultTV.setText("you're Under Weight");
+                    double BMI = Weight / (TotalMeeter * TotalMeeter);
+                    if (BMI > 25) {
+                        ResultTV.setText("you're Over Weight");
+                    } else if (BMI < 18) {
+                        ResultTV.setText("you're Under Weight");
+                    } else {
+                        ResultTV.setText("you're Healthy!");
+                    }
+
                 } else {
-                    ResultTV.setText("you're Healthy!");
+                    Toast.makeText(getApplicationContext(), "please Enter Details", Toast.LENGTH_SHORT).show();
                 }
 
             }
         });
+
 
         /*<------------Handle_Restart_Button_On_click_Listener--------->*/
 
         restartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Main_Activity.this, Main_Activity.class));
-                finish();
+
+                enterWeightInputEditT.setText(null);
+                enterHeightFeetInputEditT.setText(null);
+                enterHeightInchInputEditT.setText(null);
+
             }
         });
+
+
     }
 }
