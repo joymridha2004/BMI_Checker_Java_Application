@@ -119,21 +119,21 @@
             android:textColor="@color/black" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
-        android:id="@+id/Result_TV"
-        android:layout_width="200dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="40dp"
-        android:fontFamily="@font/poppins_regular"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:text="Good Day"
-        android:gravity="center"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/enter_Height_Inch_TInputLayout"
-        tools:ignore="MissingConstraints"
-        android:background="@drawable/text_view_shape"/>
+        <TextView
+            android:id="@+id/Result_TV"
+            android:layout_width="200dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/text_view_shape"
+            android:fontFamily="@font/poppins_regular"
+            android:gravity="center"
+            android:text="Good Day"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/enter_Height_Inch_TInputLayout"
+            tools:ignore="MissingConstraints" />
 
 
     <androidx.appcompat.widget.AppCompatButton
