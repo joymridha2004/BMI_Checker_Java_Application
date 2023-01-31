@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -55,16 +58,21 @@ public class Main_Activity extends AppCompatActivity {
                     double BMI = Weight / (TotalMeeter * TotalMeeter);
                     if (BMI > 25) {
                         ResultTV.setText("you're Over Weight");
+                        ResultTV.setBackgroundResource(R.drawable.text_view_over_wait_);
+                        ResultTV.setTextColor(Color.parseColor("#FFFFFFFF"));
                     } else if (BMI < 18) {
                         ResultTV.setText("you're Under Weight");
+                        ResultTV.setBackgroundResource(R.drawable.text_view_under_wait_);
+                        ResultTV.setTextColor(Color.parseColor("#FFFFFFFF"));
                     } else {
                         ResultTV.setText("you're Healthy!");
+                        ResultTV.setBackgroundResource(R.drawable.text_view_healthy);
+                        ResultTV.setTextColor(Color.parseColor("#FFFFFFFF"));
                     }
 
                 } else {
                     Toast.makeText(getApplicationContext(), "please Enter Details", Toast.LENGTH_SHORT).show();
                 }
-
             }
         });
 
@@ -78,10 +86,11 @@ public class Main_Activity extends AppCompatActivity {
                 enterWeightInputEditT.setText(null);
                 enterHeightFeetInputEditT.setText(null);
                 enterHeightInchInputEditT.setText(null);
-
+                ResultTV.setBackgroundResource(R.drawable.text_view_shape);
+                ResultTV.setTextColor(Color.parseColor("#FF000000"));
             }
         });
 
-
     }
+
 }

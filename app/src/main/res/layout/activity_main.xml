@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Main_Activity">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -23,155 +24,179 @@
             tools:ignore="MissingConstraints" />
 
         <TextView
-        android:id="@+id/weight_TV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:fontFamily="@font/poppins_regular"
-        android:text="@string/weight"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+            android:id="@+id/weight_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/weight"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/enter_Weight_TInputLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="50dp"
-        android:hint="@string/enter_weight"
-        app:hintTextColor="#4D000000"
-        app:layout_constraintTop_toBottomOf="@id/weight_TV"
-        tools:ignore="MissingConstraints">
+        <LinearLayout
+            android:id="@+id/Layout1"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/weight_TV"
+            tools:ignore="MissingConstraints">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/enter_Weight_Input_EditT"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/enter_Weight_TInputLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/enter_weight"
+                app:hintTextColor="#4D000000"
+                tools:ignore="MissingConstraints">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/enter_Weight_Input_EditT"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="top"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:maxLines="1"
+                    android:textColor="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/height_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/height"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/Layout1"
+            tools:ignore="MissingConstraints" />
+
+        <LinearLayout
+            android:id="@+id/Layout2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_regular"
-            android:gravity="top"
-            android:inputType="number"
-            android:textColor="@color/black" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/height_TV"
+            tools:ignore="MissingConstraints">
 
-    <TextView
-        android:id="@+id/height_TV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:fontFamily="@font/poppins_regular"
-        android:text="@string/height"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/enter_Weight_TInputLayout"
-        tools:ignore="MissingConstraints" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/enter_Height_Feet_TInputLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:hint="@string/feet"
+                app:hintTextColor="#4D000000"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/height_TV"
+                tools:ignore="MissingConstraints">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/enter_Height_Feet_TInputLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="30dp"
-        android:hint="@string/feet"
-        app:hintTextColor="#4D000000"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/height_TV"
-        tools:ignore="MissingConstraints">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/enter_Height_Feet_Input_EditT"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="top"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:maxLines="1"
+                    android:textColor="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/enter_Height_Feet_Input_EditT"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_regular"
-            android:gravity="top"
-            android:inputType="number"
-            android:textColor="@color/black" />
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/enter_Height_Inch_TInputLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:hint="@string/inch"
+                app:hintTextColor="#4D000000"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/height_TV"
+                tools:ignore="MissingConstraints">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/enter_Height_Inch_TInputLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="45dp"
-        android:hint="@string/inch"
-        app:hintTextColor="#4D000000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/height_TV"
-        tools:ignore="MissingConstraints">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/enter_Height_Inch_Input_EditT"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="top"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:maxLines="1"
+                    android:textColor="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/enter_Height_Inch_Input_EditT"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_regular"
-            android:gravity="top"
-            android:inputType="number"
-            android:textColor="@color/black" />
-    </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
 
         <TextView
             android:id="@+id/Result_TV"
             android:layout_width="200dp"
             android:layout_height="45dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="60dp"
             android:background="@drawable/text_view_shape"
             android:fontFamily="@font/poppins_regular"
             android:gravity="center"
-            android:text="Good Day"
+            android:text="@string/good_day"
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/enter_Height_Inch_TInputLayout"
+            app:layout_constraintTop_toBottomOf="@+id/Layout2"
             tools:ignore="MissingConstraints" />
 
+        <LinearLayout
+            android:id="@+id/Layout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/Result_TV"
+            tools:ignore="MissingConstraints">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/start_Button"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginBottom="80dp"
-        android:background="@drawable/start_button_shape"
-        android:elevation="20dp"
-        android:text="@string/start"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/Result_TV"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="62dp"
-        tools:layout_editor_absoluteY="544dp" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/start_Button"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/start_button_shape"
+                android:elevation="20dp"
+                android:text="@string/start"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                tools:ignore="MissingConstraints" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/restart_Button"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="80dp"
-        android:background="@drawable/restart_button_shape"
-        android:elevation="20dp"
-        android:text="@string/restart"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/Result_TV"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="62dp"
-        tools:layout_editor_absoluteY="544dp" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/restart_Button"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/restart_button_shape"
+                android:elevation="20dp"
+                android:text="@string/restart"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+        </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
