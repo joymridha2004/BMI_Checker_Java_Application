@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -22,8 +23,9 @@ public class Main_Activity extends AppCompatActivity {
 
     Button startButton, restartButton;
 
-    TextView ResultTV;
+    TextView ResultTV, github_link;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,9 +38,19 @@ public class Main_Activity extends AppCompatActivity {
         startButton = findViewById(R.id.start_Button);
         restartButton = findViewById(R.id.restart_Button);
         ResultTV = findViewById(R.id.Result_TV);
+        github_link = findViewById(R.id.github_link);
+
+        /*<------------Handle_Github_link_On_click_Listener--------->*/
+
+        github_link.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/joymridha2004"));
+                startActivity(intent);
+            }
+        });
 
         /*<------------Handle_Start_Button_On_click_Listener--------->*/
-
 
         startButton.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("ResourceAsColor")
@@ -88,6 +100,7 @@ public class Main_Activity extends AppCompatActivity {
                 enterHeightInchInputEditT.setText(null);
                 ResultTV.setBackgroundResource(R.drawable.text_view_shape);
                 ResultTV.setTextColor(Color.parseColor("#FF000000"));
+                ResultTV.setText("Good Day");
             }
         });
 
