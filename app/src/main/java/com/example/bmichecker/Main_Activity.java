@@ -1,6 +1,7 @@
 package com.example.bmichecker;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -23,13 +24,16 @@ public class Main_Activity extends AppCompatActivity {
 
     Button startButton, restartButton;
 
-    TextView ResultTV, github_link;
+    TextView ResultTV, github_link, Project_Link;
 
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        /*<------------Night mode disable--------->*/
+
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
         /*<------------Hooks--------->*/
         enterWeightInputEditT = findViewById(R.id.enter_Weight_Input_EditT);
@@ -39,6 +43,7 @@ public class Main_Activity extends AppCompatActivity {
         restartButton = findViewById(R.id.restart_Button);
         ResultTV = findViewById(R.id.Result_TV);
         github_link = findViewById(R.id.github_link);
+        Project_Link = findViewById(R.id.Project_Link);
 
         /*<------------Handle_Github_link_On_click_Listener--------->*/
 
@@ -46,6 +51,16 @@ public class Main_Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/joymridha2004"));
+                startActivity(intent);
+            }
+        });
+
+        /*<------------Handle_Github_Project_Link_On_click_Listener--------->*/
+
+        Project_Link.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/joymridha2004/BMI_Checker_Java_Application"));
                 startActivity(intent);
             }
         });

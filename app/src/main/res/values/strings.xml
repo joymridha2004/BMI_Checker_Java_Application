@@ -9,5 +9,5 @@
     <string name="restart">Restart</string>
     <string name="version">BMI_Checker_V_0.0.4</string>
     <string name="good_day">Good Day</string>
-    <string name="github_link"><a Uri="https://github.com/joymridha2004">github.com/joymridha2004</a></string>
+    <string name="github_link">github.com/joymridha</string>
 </resources>
