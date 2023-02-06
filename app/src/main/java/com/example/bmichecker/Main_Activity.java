@@ -12,6 +12,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,7 +25,9 @@ public class Main_Activity extends AppCompatActivity {
 
     Button startButton, restartButton;
 
-    TextView ResultTV, github_link, Project_Link;
+    TextView ResultTV, Project_Link;
+
+    ImageView github_link;
 
     @SuppressLint("MissingInflatedId")
     @Override
