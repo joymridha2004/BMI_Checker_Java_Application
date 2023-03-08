@@ -119,6 +119,7 @@ public class Main_Activity extends AppCompatActivity {
                 ResultTV.setBackgroundResource(R.drawable.text_view_shape);
                 ResultTV.setTextColor(Color.parseColor("#FF000000"));
                 ResultTV.setText("Good Day");
+                enterWeightInputEditT.requestFocus();
             }
         });
 
